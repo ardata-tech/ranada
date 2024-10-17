@@ -93,7 +93,7 @@ If you would like to make a donation to support development, please use [Github 
 
 6.  The username and password in the docker logs (save it!)
 
-    ![alt text](image.png)
+   ![image](https://github.com/user-attachments/assets/17bfde6d-88b2-441e-94ed-a3dba6df6d32)
 
 7.  Go to web folder
 
@@ -152,8 +152,9 @@ If you would like to make a donation to support development, please use [Github 
 
 5.  The username and password in the docker logs (save it!)
 
-    ![alt text](image.png)
+   ![image](https://github.com/user-attachments/assets/17bfde6d-88b2-441e-94ed-a3dba6df6d32)
 
 6.  The admin dashboard is in port 8971
 
-    ![alt text](image-1.png)
+    ![image](https://github.com/user-attachments/assets/751375e4-8136-4e2f-9f9f-e4fc59e100f2)
+
