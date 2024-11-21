@@ -30,21 +30,131 @@ If you would like to make a donation to support development, please use [Github 
 ## Screenshots
 
 ### Live dashboard
+
 <div>
 <img width="800" alt="Live dashboard" src="https://github.com/blakeblackshear/frigate/assets/569905/5e713cb9-9db5-41dc-947a-6937c3bc376e">
 </div>
 
 ### Streamlined review workflow
+
 <div>
 <img width="800" alt="Streamlined review workflow" src="https://github.com/blakeblackshear/frigate/assets/569905/6fed96e8-3b18-40e5-9ddc-31e6f3c9f2ff">
 </div>
 
 ### Multi-camera scrubbing
+
 <div>
 <img width="800" alt="Multi-camera scrubbing" src="https://github.com/blakeblackshear/frigate/assets/569905/d6788a15-0eeb-4427-a8d4-80b93cae3d74">
 </div>
 
 ### Built-in mask and zone editor
+
 <div>
 <img width="800" alt="Multi-camera scrubbing" src="https://github.com/blakeblackshear/frigate/assets/569905/d7885fc3-bfe6-452f-b7d0-d957cb3e31f5">
 </div>
+
+## Prerequisite
+
+1. Nodejs
+2. Docker
+3. Ubuntu
+
+### For Local Development
+
+1.  Delete existing files inside config folder if you want to generate new admin password
+
+2.  Create config.yml with this contents (you can change this)
+
+        mqtt:
+          enabled: false
+        cameras:
+          test:
+            ffmpeg:
+              inputs:
+                - path: /media/frigate/car-stopping.mp4
+                  input_args: -re -stream_loop -1 -fflags +genpts
+                  roles:
+                    - detect
+        version: 0.15-0
+        auth:
+          enabled: true
+
+3.  Create a debug folder in root directory and add a sample mp4 file(s)
+
+4.  Build docker frigate image
+
+        docker buildx build --target=frigate --file docker/main/Dockerfile . \
+            --tag frigate:latest \
+            --load
+
+5.  Run api server
+
+        docker run --rm --publish=5000:5000 --volume=${PWD}/config:/config --volume=${PWD}/debug:/media/frigate/ frigate:latest
+
+6.  The username and password in the docker logs (save it!)
+
+   ![image](https://github.com/user-attachments/assets/17bfde6d-88b2-441e-94ed-a3dba6df6d32)
+
+7.  Go to web folder
+
+    a. If you are running for the first time install dependency
+
+        npm install
+
+    b. Run the admin dashboard (developer version)
+
+        npm run dev
+
+### For Production build
+
+1.  Delete existing files inside config folder if you want to generate new admin password
+
+2.  Create config.yml with this contents (you can change this)
+
+        mqtt:
+          enabled: false
+        cameras:
+          test:
+            ffmpeg:
+              inputs:
+                - path: /media/frigate/car-stopping.mp4
+                  input_args: -re -stream_loop -1 -fflags +genpts
+                  roles:
+                    - detect
+        version: 0.15-0
+        auth:
+          enabled: true
+
+3.  Build docker frigate image
+
+        docker buildx build --target=frigate --file docker/main/Dockerfile . \
+            --tag frigate:latest \
+            --load
+
+4.  Create frigate container (you can edit this)
+
+        docker run -d \
+          --name frigate \
+          --restart=unless-stopped \
+          --mount type=tmpfs,target=/tmp/cache,tmpfs-size=1000000000 \
+          --device /dev/bus/usb:/dev/bus/usb \
+          --device /dev/dri/renderD128 \
+          --shm-size=64m \
+          -v /path/to/your/storage:/media/frigate \
+          -v /path/to/your/config:/config \
+          -v /etc/localtime:/etc/localtime:ro \
+          -e FRIGATE_RTSP_PASSWORD='password' \
+          -p 8971:8971 \
+          -p 8554:8554 \
+          -p 8555:8555/tcp \
+          -p 8555:8555/udp \
+          frigate
+
+5.  The username and password in the docker logs (save it!)
+
+   ![image](https://github.com/user-attachments/assets/17bfde6d-88b2-441e-94ed-a3dba6df6d32)
+
+6.  The admin dashboard is in port 8971
+
+    ![image](https://github.com/user-attachments/assets/751375e4-8136-4e2f-9f9f-e4fc59e100f2)
+
