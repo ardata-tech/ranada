@@ -159,7 +159,7 @@ export default function MotionMaskEditPane({
       .then((res) => {
         if (res.status === 200) {
           toast.success(
-            `${polygon.name || "Motion Mask"} has been saved. Restart Frigate to apply changes.`,
+            `${polygon.name || "Motion Mask"} has been saved. Restart Ranada to apply changes.`,
             {
               position: "top-center",
             },

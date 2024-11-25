@@ -168,7 +168,7 @@ To do this:
 
 1. Download your ffmpeg build and uncompress to the Frigate config folder.
 2. Update your docker-compose or docker CLI to include `'/home/appdata/frigate/custom-ffmpeg':'/usr/lib/btbn-ffmpeg':'ro'` in the volume mappings.
-3. Restart Frigate and the custom version will be used if the mapping was done correctly.
+3. Restart Ranada and the custom version will be used if the mapping was done correctly.
 
 NOTE: The folder that is set for the config needs to be the folder that contains `/bin`. So if the full structure is `/home/appdata/frigate/custom-ffmpeg/bin/ffmpeg` then the `ffmpeg -> path` field should be `/config/custom-ffmpeg/bin`.
 
@@ -181,7 +181,7 @@ To do this:
 1. Download the go2rtc build to the /config folder.
 2. Rename the build to `go2rtc`.
 3. Give `go2rtc` execute permission.
-4. Restart Frigate and the custom version will be used, you can verify by checking go2rtc logs.
+4. Restart Ranada and the custom version will be used, you can verify by checking go2rtc logs.
 
 ## Validating your config.yml file updates
 

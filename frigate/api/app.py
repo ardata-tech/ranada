@@ -229,7 +229,7 @@ def config_save(save_option: str, body: Any = Body(media_type="text/plain")):
                 content=(
                     {
                         "success": True,
-                        "message": "Config successfully saved, unable to restart Frigate",
+                        "message": "Config successfully saved, unable to Restart Ranada",
                     }
                 ),
                 status_code=200,
@@ -492,7 +492,7 @@ def restart():
             content=(
                 {
                     "success": False,
-                    "message": "Unable to restart Frigate.",
+                    "message": "Unable to Restart Ranada.",
                 }
             ),
             status_code=500,

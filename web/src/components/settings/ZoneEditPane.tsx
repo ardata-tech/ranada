@@ -269,7 +269,7 @@ export default function ZoneEditPane({
         .then((res) => {
           if (res.status === 200) {
             toast.success(
-              `Zone (${zoneName}) has been saved. Restart Frigate to apply changes.`,
+              `Zone (${zoneName}) has been saved. Restart Ranada to apply changes.`,
               {
                 position: "top-center",
               },

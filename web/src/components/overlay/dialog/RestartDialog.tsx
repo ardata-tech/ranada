@@ -79,7 +79,7 @@ export default function RestartDialog({
         <AlertDialogContent>
           <AlertDialogHeader>
             <AlertDialogTitle>
-              Are you sure you want to restart Frigate?
+              Are you sure you want to Restart Ranada?
             </AlertDialogTitle>
           </AlertDialogHeader>
           <AlertDialogFooter>

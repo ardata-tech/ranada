@@ -362,11 +362,11 @@ export default function GeneralSettings({ className }: GeneralSettingsProps) {
               className={
                 isDesktop ? "cursor-pointer" : "flex items-center p-2 text-sm"
               }
-              aria-label="Restart Frigate"
+              aria-label="Restart Ranada"
               onClick={() => setRestartDialogOpen(true)}
             >
               <LuRotateCw className="mr-2 size-4" />
-              <span>Restart Frigate</span>
+              <span>Restart Ranada</span>
             </MenuItem>
           </div>
         </Content>

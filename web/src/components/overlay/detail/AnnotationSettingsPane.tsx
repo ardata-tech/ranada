@@ -74,7 +74,7 @@ export function AnnotationSettingsPane({
         .then((res) => {
           if (res.status === 200) {
             toast.success(
-              `Annotation offset for ${event?.camera} has been saved to the config file. Restart Frigate to apply your changes.`,
+              `Annotation offset for ${event?.camera} has been saved to the config file. Restart Ranada to apply your changes.`,
               {
                 position: "top-center",
               },
