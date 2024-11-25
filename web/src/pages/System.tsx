@@ -44,12 +44,14 @@ function System() {
   return (
     <div className="flex size-full flex-col p-2">
       <Toaster position="top-center" />
+      {isMobile && (
+        <div className="h-15 flex w-full justify-start">
+          <Logo />
+        </div>
+      )}
       <div className="relative flex h-11 w-full items-center justify-between">
-        {isMobile && (
-          <Logo className="absolute inset-x-1/2 h-8 -translate-x-1/2" />
-        )}
         <ToggleGroup
-          className="*:rounded-md *:px-3 *:py-4"
+          className="flex-2 *:rounded-md *:px-3 *:py-4"
           type="single"
           size="sm"
           value={pageToggle}
