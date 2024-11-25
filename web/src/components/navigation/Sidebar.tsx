@@ -21,7 +21,7 @@ function Sidebar() {
       <span tabIndex={0} className="sr-only" />
       <div className="flex w-full flex-col items-center gap-0">
         <Link to="/">
-          <Logo className="mb-6 h-8 w-8" />
+          <Logo className="mx-3 h-full w-full" />
         </Link>
         {navbarLinks.map((item) => {
           const showCameraGroups =

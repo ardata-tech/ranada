@@ -227,13 +227,15 @@ export default function LiveDashboardView({
       ref={containerRef}
     >
       {isMobile && (
-        <div className="relative flex h-11 items-center justify-between">
-          <Logo className="absolute inset-x-1/2 h-8 -translate-x-1/2" />
-          <div className="max-w-[45%]">
+        <div className="relative flex h-11 w-full items-center justify-between">
+          <div className="w-full">
             <CameraGroupSelector />
           </div>
+          <div className="align-center flex h-full w-full justify-center">
+            <Logo />
+          </div>
           {(!cameraGroup || cameraGroup == "default" || isMobileOnly) && (
-            <div className="flex items-center gap-1">
+            <div className="flex w-full justify-end gap-1">
               <Button
                 className={`p-1 ${
                   mobileLayout == "grid"
