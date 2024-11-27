@@ -91,7 +91,7 @@ PTZ motors operate at different speeds. Performing a calibration will direct Fri
 
 Calibration is optional, but will greatly assist Frigate in autotracking objects that move across the camera's field of view more quickly.
 
-To begin calibration, set the `calibrate_on_startup` for your camera to `True` and restart Frigate. Frigate will then make a series of small and large movements with your camera. Don't move the PTZ manually while calibration is in progress. Once complete, camera motion will stop and your config file will be automatically updated with a `movement_weights` parameter to be used in movement calculations. You should not modify this parameter manually.
+To begin calibration, set the `calibrate_on_startup` for your camera to `True` and Restart Ranada. Frigate will then make a series of small and large movements with your camera. Don't move the PTZ manually while calibration is in progress. Once complete, camera motion will stop and your config file will be automatically updated with a `movement_weights` parameter to be used in movement calculations. You should not modify this parameter manually.
 
 After calibration has ended, your PTZ will be moved to the preset specified by `return_preset`.
 

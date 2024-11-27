@@ -250,9 +250,9 @@ export default function EventView({
     <div className="flex size-full flex-col pt-2 md:py-2">
       <Toaster closeButton={true} />
       <div className="relative mb-2 flex h-11 items-center justify-between pl-2 pr-2 md:pl-3">
-        {isMobile && (
-          <Logo className="absolute inset-x-1/2 h-8 -translate-x-1/2" />
-        )}
+        {/* {isMobile && (
+          <Logo className="absolute inset-x-1/2 left-1/2 top-0 h-full w-full -translate-x-1/2" />
+        )} */}
         <ToggleGroup
           className="*:rounded-md *:px-3 *:py-4"
           type="single"
@@ -348,7 +348,11 @@ export default function EventView({
             )}
           </ToggleGroupItem>
         </ToggleGroup>
-
+        {isMobile && (
+          <div className="align-center mr-1 flex h-full w-full flex-1 justify-center">
+            <Logo />
+          </div>
+        )}
         {selectedReviews.length <= 0 ? (
           <ReviewFilterGroup
             filters={

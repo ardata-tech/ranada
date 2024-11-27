@@ -228,7 +228,7 @@ cameras:
 
 More details on available detectors can be found [here](../configuration/object_detectors.md).
 
-Restart Frigate and you should start seeing detections for `person`. If you want to track other objects, they will need to be added according to the [configuration file reference](../configuration/reference.md).
+Restart Ranada and you should start seeing detections for `person`. If you want to track other objects, they will need to be added according to the [configuration file reference](../configuration/reference.md).
 
 ### Step 5: Setup motion masks
 
@@ -306,7 +306,8 @@ By default, Frigate will retain video of all tracked objects for 10 days. The fu
 
 ### Step 7: Complete config
 
-At this point you have a complete config with basic functionality. 
+At this point you have a complete config with basic functionality.
+
 - View [common configuration examples](../configuration/index.md#common-configuration-examples) for a list of common configuration examples.
 - View [full config reference](../configuration/reference.md) for a complete list of configuration options.
 

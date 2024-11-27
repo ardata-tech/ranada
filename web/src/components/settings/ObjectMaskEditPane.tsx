@@ -191,7 +191,7 @@ export default function ObjectMaskEditPane({
         .then((res) => {
           if (res.status === 200) {
             toast.success(
-              `${polygon.name || "Object Mask"} has been saved. Restart Frigate to apply changes.`,
+              `${polygon.name || "Object Mask"} has been saved. Restart Ranada to apply changes.`,
               {
                 position: "top-center",
               },
